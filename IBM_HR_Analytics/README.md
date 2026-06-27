@@ -6,6 +6,7 @@ using a real world Kaggle dataset.
 
 ## Tools Used
 - MySQL / DataGrip — data querying
+- Excel — summary tables, COUNTIFS, AVERAGEIF, conditional formatting
 - Power BI — multi-page dashboard
 
 ## Business Questions
