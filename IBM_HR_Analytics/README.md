@@ -26,5 +26,7 @@ using a real world Kaggle dataset.
 - CASE WHEN with multiple conditions
 - Subqueries
 - ROUND and TIMESTAMPDIFF
+- COUNTIFS and AVERAGEIF in Excel
+- Conditional formatting in Excel
 - DAX calculated columns and measures in Power BI
 - Multi-page Power BI dashboard with slicers and KPI cards
