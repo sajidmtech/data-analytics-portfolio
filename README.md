@@ -21,18 +21,22 @@ subqueries, pivot tables, Power BI dashboards
 
 ---
 
-### 2. IBM HR Analytics
-Analysis of 1,470 IBM employees across three business questions 
-using a real world Kaggle dataset.
+2. IBM HR Analytics — Employee Compensation & Performance
+Tools: MySQL · Power BI · Excel
+GitHub: github.com/yourname/data-analytics-portfolio
 
-**Key findings:**
-- Overtime workers leave at 3x the rate of non-overtime workers
-- High performers earn $200 less per month than average performers
-- R&D accounts for 65% of all high performers
-
-**Key skills:** Subqueries, CASE WHEN, DAX measures, 
-multi-page Power BI dashboard with slicers and KPI cards
-
+- Analysed 1,470 IBM employee records to investigate 
+  compensation fairness across performance ratings
+- Discovered high performers earn $223 less per month than 
+  average performers despite receiving 56% larger salary hikes 
+  (21.85% vs 14%) — identifying a starting salary problem
+- Found overtime workers leave at 3x the rate of non-overtime 
+  workers (30.5% vs 10.4%) with an estimated $3.5M replacement 
+  cost impact
+- Built a single page Power BI dashboard with KPI cards, DAX 
+  measures, reference lines and interactive slicers
+- Wrote SQL queries using JOIN, GROUP BY, CASE WHEN and 
+  subqueries across a 35 column normalised dataset
 [View Project →](./IBM_HR_Analytics/)
 
 ---
