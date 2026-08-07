@@ -19,7 +19,6 @@ exact headcount needed to close the gap,, a Excel spreadsheet, and a Power BI da
 - Company-wide compliance looked healthy at ~24.5% 
 - IT and Warehouse & Logistics were sitting at 7–10% national representation which is a ~11 hire gap hiding behind the average.
 
-[View Project →](https://github.com/sajidmtech/data-analytics-portfolio/blob/main/Gulf_Analytics)
 [View Project →](./Gulf_Analytics/)
 
 ---
