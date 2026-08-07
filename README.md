@@ -11,9 +11,15 @@ MySQL · Power BI · Excel · DataGrip
 ## Projects
 
 ### 1. Gulf Workforce Nationalization Analytics
-Coming soon — Saudization and Emiratization compliance 
-analysis for a fictional Gulf holding company.
+Saudization (Nitaqat) and Emiratization compliance risk analysis for a fictional Gulf holding company. 
+Identifies which departments are failing nationalization targets, quantifies the 
+exact headcount needed to close the gap,, a Excel spreadsheet, and a Power BI dashboard.
 
+**Key finding:** 
+- Company-wide compliance looked healthy at ~24.5% 
+- IT and Warehouse & Logistics were sitting at 7–10% national representation which is a ~11 hire gap hiding behind the average.
+
+[View Project →](https://github.com/sajidmtech/data-analytics-portfolio/blob/main/Gulf_Analytics)
 [View Project →](./Gulf_Analytics/)
 
 ---
