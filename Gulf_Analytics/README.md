@@ -1,7 +1,7 @@
 # Gulf Workforce Nationalization Analytics
 ### Saudization & Emiratization Compliance Risk Analysis — Al Rashid Holdings (Fictional)
 
-![Dashboard](dashboard.png)
+![Dashboard](rashid_dashboard.png)
 
 ## Business problem
 
