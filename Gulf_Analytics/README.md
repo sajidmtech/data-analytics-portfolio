@@ -1,34 +1,46 @@
-# Gulf Workforce Nationalization Analytics — Saudization & Emiratization Compliance
+# Gulf Workforce Nationalization Analytics
+### Saudization & Emiratization Compliance Risk Analysis — Al Rashid Holdings (Fictional)
 
-## Overview
+![Dashboard](dashboard.png)
 
-Analysis of 424 employees across a fictional Gulf holding company (Al Rashid Holdings,
-operating in Saudi Arabia and the UAE) to identify department-level nationalization compliance risk,
-quantify the hiring gap against Saudization (Nitaqat) and Emiratization targets
-and flag salary-driven retention risk among national employees.
+## Business problem
 
-## Tools Used
-- MySQL / DataGrip — data querying and analysis
-- Excel — summaries built with formulas,
-  COUNTIFS, SUMIFS, AVERAGEIFS, conditional formatting
-- Power BI — single page dashboard
-  with KPI cards, DAX measures, and charts
+Companies in Saudi Arabia and the UAE must meet national workforce quotas: Nitaqat in Saudi Arabia, Emiratization in the UAE. A company can look compliant overall while individual departments quietly miss their targets, and those hidden gaps are what trigger fines, visa restrictions and audits.
 
-## Business Questions
-1. Which departments are failing nationalization compliance targets, and by how much?
-2. How many national hires would it take to bring an under-target department up to its country average?
-3. Are national employees compensated fairly relative to expatriates in the same roles?
+This project models a fictional holding company, **Al Rashid Holdings** (424 employees across both countries), to answer one question for leadership:
 
-## Key Findings
-IT and Warehouse & Logistics fall to 7–10% national representation in both Saudi Arabia and the UAE, well below the company's own 22–27% country averages and below the 20% risk threshold
-Closing the gap requires an estimated 22 additional national hires company-wide (roughly 11 per country) which is a percentage point shortfall into an actionable headcount target
-Company-wide compliance looks healthy at ~24.5% national representation, but that average masks two departments carrying nearly all of the risk. The same pattern in both countries independently
-Salary comparison between nationals and expatriates in the same departments surfaces a secondary retention risk that could undercut hiring gains if left unaddressed.
+> **Where is our nationalization compliance risk hiding, and what does it take to fix it?**
 
-## Key Skills Demonstrated
-- GROUP BY, CASE WHEN with multiple conditions, HAVING
-- Window functions — ROUND(), RANK(), AVG() OVER (PARTITION BY)
-- COUNTIFS, SUMIFS, AVERAGEIFS in Excel
-- Conditional formatting in Excel
-- DAX calculated columns and measures — ALLEXCEPT, ALL, AVERAGEX, SUMX, VAR/RETURN
-- Single page Power BI dashboard with KPI cards, slicers, donut and combo charts
+## Key findings
+
+1. **The company average hides two failing departments.** National representation is 24.1% company-wide, but **IT and Warehouse & Logistics sit at 7–10% in both countries**, below the 20% risk threshold. Every other department is at 28–40%.
+2. **The gap is about 22 hires.** Bringing those two departments up to their own country's average takes **~22 national hires: ~11 in Saudi Arabia and ~11 in the UAE** (about 6 in IT and 5 in Warehouse & Logistics in each country).
+3. **In the UAE, the same two departments underpay nationals.** Emiratis in IT earn ~12% less than expatriate colleagues (AED 10,124 vs 11,480/month) and ~13% less in Warehouse & Logistics (AED 5,023 vs 5,799). New national hires may not stay. In Saudi Arabia, nationals earn slightly more than expatriates in both departments. *(Small samples: 3–4 nationals per department.)*
+
+## Recommendations
+
+- **Prioritize national hiring in IT and Warehouse & Logistics** rather than company-wide targets; ~22 hires closes the gap.
+- **Review UAE pay bands for Emiratis in IT and Warehouse & Logistics** before hiring, so the gap doesn't reopen through attrition.
+- **Track compliance by department, not just company-wide**, using the dashboard's department view each quarter.
+
+## Tools & stack
+
+| Layer | Tool |
+|---|---|
+| Data generation | Python (synthetic 424-row dataset, 12 columns) |
+| Database | MySQL 8.0 (via DataGrip) |
+| Analysis | SQL: GROUP BY / CASE WHEN, window functions (`RANK() OVER`, `AVG() OVER (PARTITION BY)`), CTEs, correlated subqueries |
+| Spreadsheet | Excel: formula-driven workbook (COUNTIFS, SUMIFS, AVERAGEIFS), conditional formatting, no hardcoded values |
+| Dashboard | Power BI: DAX measures (`ALLEXCEPT`, `ALL`, `SUMX`, `VAR`/`RETURN`), KPI cards, country slicer, conditional-formatting bar chart, national vs. expat salary comparison |
+
+## Files
+
+| File | What it is |
+|---|---|
+| `gulf_analytics.sql` | All SQL queries, from basic exploration to the hires-needed calculation |
+| `Al_Rashid_Nationalization_Analytics.xlsx` | Excel workbook: raw data, compliance summary, salary comparison, hiring trend |
+| `al_rashid_power_bi.pbix` | Power BI dashboard (see screenshot above; GitHub can't preview .pbix files) |
+
+## Methodology note
+
+Company-level nationalization data is confidential (held by MHRSD/Qiwa in Saudi Arabia and MOHRE/NAFIS in the UAE), so this project uses a synthetic dataset built to reflect published program rules rather than any real company. "Hires needed" assumes each new national hire replaces an expatriate role, keeping department headcount constant.
